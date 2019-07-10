@@ -26,10 +26,13 @@ a
 	font-weight: bold
 	text-transform: uppercase
 	box-shadow: 2px 2px 0px 0px #004c00, 6px 6px 0px 0px #004c00, 10px 10px 0px 0px #004c00
+	transition: all .2s ease-out
+	border: none
 .btn:hover 
 	text-decoration: none
-	box-shadow: 2px 2px 0px 0px rgb(0, 153, 0), 6px 6px 0px 0px rgb(0, 153, 0)
-	background-color: #004c00
+	box-shadow: none
+	// box-shadow: 2px 2px 0px 0px rgb(0, 153, 0), 6px 6px 0px 0px rgb(0, 153, 0)
+	// background-color: #004c00
 	color: #fff
 .wap
 	display: none
@@ -220,6 +223,8 @@ main
 				font-size: 25px
 				font-weight: bold
 				color: rgb(255, 0, 0)
+		.result_test
+			display: none
 		.speedometer
 			position: relative
 			.speedline
@@ -392,18 +397,23 @@ main.animation
 	.speed_block 
 		.speedometer 
 			.speedline
-				animation: speed-spin 4s linear 1 reverse
-
+				animation: speed-spin 4s ease 1 reverse
 .popup_block 
 	// display: none
 @media screen and (max-width: 991px)
 	.bg
 		display: none
 	.container
-		max-width: 740px
+		max-width: 400px
 		padding: 0 10px
 	.wap 
 		display: block
+	.btn
+		font-size: 20px
+		padding: 20px 10px
+		box-shadow: 2px 2px 0px 0px #004c00, 4px 4px 0px 0px #004c00, 6px 6px 0px 0px #004c00
+		border-radius: 0 20px 0 20px
+		min-width: 0
 	header 
 		text-align: center
 		.logo 
@@ -425,32 +435,82 @@ main.animation
 		.scaner_blocks
 			width: 100%
 			padding: 0
+			text-align: center
 			.scaner_block.web
 				display: none
 			.scaner_block.wap
 				display: inline-block
 			.scaner_block
-				margin: 0 10px 30px
+				margin: 0 0 30px
 				width: 30%
 				.circle_load
+					width: 100px
+					height: 100px
+					border-width: 5px
 					margin: 0 auto 10px
-					.circle_device 
+					.circle_device
+						width: 90px
+						height: 90px
 						padding: 15px
 						img
 							border-radius: 100%
 					.circle_device:before
 						display: none
+					.circle_loading
+						width: 100px
+						height: 100px
+						left: -5px
+						top: -5px
+						clip: rect(0px, 100px, 100px, 50px)
+						.circle
+							width: 100px
+							height: 100px
+							border-width: 5px
+							clip: rect(0px, 50px, 100px, 0px)
+					.small_circle
+						width: 100px
+						height: 100px
+						left: -5px
+						top: -5px
+					.small_circle:before
+						width: 10px
+						height: 10px
+						left: 45px
+						top: -2.5px
+				h5 
+					font-size: 14px
 				p 
-					font-size: 20px
+					font-size: 12px
 		.speed_block
 			display: block
-			margin: 15px auto 15px
-			padding: 50px 40px 45px
+			margin: 0 auto 15px
+			// padding: 50px 40px 45px
+			padding: 29px 20px 20px
+			border-radius: 0 30px 0 30px
 			.btn
 				position: static
 				transform: none
 				width: 100%
-				margin-top: 40px
+				// margin-top: 40px
+				margin-top: 30px
+			h5 
+				font-size: 15px
+			p 
+				font-size: 12px
+				span 
+					font-size: 15px
+			.speedometer 
+				.speedline
+					max-height: 100%
+					bottom: -10px
+					left: calc(50% - 23px)
+	.popup_block 
+		.popup
+			width: 380px
+			padding: 65px 20px 35px
+			p 
+				font-size: 19px
+				margin-bottom: 30px
 @media screen and (max-width: 991px) and (orientation: landscape)
 	.popup_block 
 		.popup
@@ -465,7 +525,7 @@ main.animation
 			box-shadow: 2px 2px 0px 0px #004c00, 4px 4px 0px 0px #004c00, 6px 6px 0px 0px #004c00
 			border-radius: 0 20px 0 20px
 			min-width: 0
-@media screen and (max-width: 739px)
+@media screen and (max-width: 425px)
 	.container
 		max-width: 300px
 		padding: 0 5px
@@ -523,6 +583,8 @@ main.animation
 					margin-bottom: 5px
 				p 
 					font-size: 12px
+			.scaner_block:nth-last-of-type(1), .scaner_block:nth-last-of-type(4)
+				display: none
 		.speed_block
 			padding: 29px 20px 20px
 			border-radius: 0 30px 0 30px
@@ -547,7 +609,6 @@ main.animation
 				font-size: 15px
 				margin-bottom: 40px
 @media screen and (max-width: 739px) and (orientation: landscape)
-	footer
 	.popup_block 
 		padding: 40px 0 75px
 		height: auto
@@ -576,18 +637,10 @@ main.animation
 		transform: rotate(360deg)
 
 @keyframes speed-spin
-	30%
-		transform: rotate(-8deg)
-	40%
-		transform: rotate(4deg)
-	50%
-		transform: rotate(-7deg)
-	60%
-		transform: rotate(9deg)
-	70%
+	20%
 		transform: rotate(-10deg)
-	85%
-		transform: rotate(10deg)
+	60%
+		transform: rotate(20deg)
 	100%
 		transform: rotate(-46deg)
 

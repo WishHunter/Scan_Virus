@@ -32,13 +32,16 @@ a {
   font-weight: bold;
   text-transform: uppercase;
   -webkit-box-shadow: 2px 2px 0px 0px #004c00, 6px 6px 0px 0px #004c00, 10px 10px 0px 0px #004c00;
-          box-shadow: 2px 2px 0px 0px #004c00, 6px 6px 0px 0px #004c00, 10px 10px 0px 0px #004c00; }
+          box-shadow: 2px 2px 0px 0px #004c00, 6px 6px 0px 0px #004c00, 10px 10px 0px 0px #004c00;
+  -webkit-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  border: none; }
 
 .btn:hover {
   text-decoration: none;
-  -webkit-box-shadow: 2px 2px 0px 0px #009900, 6px 6px 0px 0px #009900;
-          box-shadow: 2px 2px 0px 0px #009900, 6px 6px 0px 0px #009900;
-  background-color: #004c00;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   color: #fff; }
 
 .wap {
@@ -235,6 +238,8 @@ main {
         font-size: 25px;
         font-weight: bold;
         color: red; }
+    main .speed_block .result_test {
+      display: none; }
     main .speed_block .speedometer {
       position: relative; }
       main .speed_block .speedometer .speedline {
@@ -430,16 +435,23 @@ main.animation .scaner_blocks .scaner_block .small_circle {
           animation: loading-spin 4s linear 1 forwards; }
 
 main.animation .speed_block .speedometer .speedline {
-  animation: speed-spin 4s linear 1 reverse; }
+  animation: speed-spin 4s ease 1 reverse; }
 
 @media screen and (max-width: 991px) {
   .bg {
     display: none; }
   .container {
-    max-width: 740px;
+    max-width: 400px;
     padding: 0 10px; }
   .wap {
     display: block; }
+  .btn {
+    font-size: 20px;
+    padding: 20px 10px;
+    -webkit-box-shadow: 2px 2px 0px 0px #004c00, 4px 4px 0px 0px #004c00, 6px 6px 0px 0px #004c00;
+            box-shadow: 2px 2px 0px 0px #004c00, 4px 4px 0px 0px #004c00, 6px 6px 0px 0px #004c00;
+    border-radius: 0 20px 0 20px;
+    min-width: 0; }
   header {
     text-align: center; }
     header .logo p {
@@ -459,35 +471,82 @@ main.animation .speed_block .speedometer .speedline {
     display: none; }
     main .scaner_blocks {
       width: 100%;
-      padding: 0; }
+      padding: 0;
+      text-align: center; }
       main .scaner_blocks .scaner_block.web {
         display: none; }
       main .scaner_blocks .scaner_block.wap {
         display: inline-block; }
       main .scaner_blocks .scaner_block {
-        margin: 0 10px 30px;
+        margin: 0 0 30px;
         width: 30%; }
         main .scaner_blocks .scaner_block .circle_load {
+          width: 100px;
+          height: 100px;
+          border-width: 5px;
           margin: 0 auto 10px; }
           main .scaner_blocks .scaner_block .circle_load .circle_device {
+            width: 90px;
+            height: 90px;
             padding: 15px; }
             main .scaner_blocks .scaner_block .circle_load .circle_device img {
               border-radius: 100%; }
           main .scaner_blocks .scaner_block .circle_load .circle_device:before {
             display: none; }
+          main .scaner_blocks .scaner_block .circle_load .circle_loading {
+            width: 100px;
+            height: 100px;
+            left: -5px;
+            top: -5px;
+            clip: rect(0px, 100px, 100px, 50px); }
+            main .scaner_blocks .scaner_block .circle_load .circle_loading .circle {
+              width: 100px;
+              height: 100px;
+              border-width: 5px;
+              clip: rect(0px, 50px, 100px, 0px); }
+          main .scaner_blocks .scaner_block .circle_load .small_circle {
+            width: 100px;
+            height: 100px;
+            left: -5px;
+            top: -5px; }
+          main .scaner_blocks .scaner_block .circle_load .small_circle:before {
+            width: 10px;
+            height: 10px;
+            left: 45px;
+            top: -2.5px; }
+        main .scaner_blocks .scaner_block h5 {
+          font-size: 14px; }
         main .scaner_blocks .scaner_block p {
-          font-size: 20px; }
+          font-size: 12px; }
     main .speed_block {
       display: block;
-      margin: 15px auto 15px;
-      padding: 50px 40px 45px; }
+      margin: 0 auto 15px;
+      padding: 29px 20px 20px;
+      border-radius: 0 30px 0 30px; }
       main .speed_block .btn {
         position: static;
         -webkit-transform: none;
             -ms-transform: none;
                 transform: none;
         width: 100%;
-        margin-top: 40px; } }
+        margin-top: 30px; }
+      main .speed_block h5 {
+        font-size: 15px; }
+      main .speed_block p {
+        font-size: 12px; }
+        main .speed_block p span {
+          font-size: 15px; }
+      main .speed_block .speedometer .speedline {
+        max-height: 100%;
+        bottom: -10px;
+        left: -webkit-calc(50% - 23px);
+        left: calc(50% - 23px); }
+  .popup_block .popup {
+    width: 380px;
+    padding: 65px 20px 35px; }
+    .popup_block .popup p {
+      font-size: 19px;
+      margin-bottom: 30px; } }
 
 @media screen and (max-width: 991px) and (orientation: landscape) {
   .popup_block .popup {
@@ -504,7 +563,7 @@ main.animation .speed_block .speedometer .speedline {
     border-radius: 0 20px 0 20px;
     min-width: 0; } }
 
-@media screen and (max-width: 739px) {
+@media screen and (max-width: 425px) {
   .container {
     max-width: 300px;
     padding: 0 5px; }
@@ -560,6 +619,8 @@ main.animation .speed_block .speedometer .speedline {
         margin-bottom: 5px; }
       main .scaner_blocks .scaner_block p {
         font-size: 12px; }
+    main .scaner_blocks .scaner_block:nth-last-of-type(1), main .scaner_blocks .scaner_block:nth-last-of-type(4) {
+      display: none; }
     main .speed_block {
       padding: 29px 20px 20px;
       border-radius: 0 30px 0 30px; }
@@ -641,47 +702,23 @@ main.animation .speed_block .speedometer .speedline {
             transform: rotate(360deg); } }
 
 @-webkit-keyframes speed-spin {
-  30% {
-    -webkit-transform: rotate(-8deg);
-            transform: rotate(-8deg); }
-  40% {
-    -webkit-transform: rotate(4deg);
-            transform: rotate(4deg); }
-  50% {
-    -webkit-transform: rotate(-7deg);
-            transform: rotate(-7deg); }
-  60% {
-    -webkit-transform: rotate(9deg);
-            transform: rotate(9deg); }
-  70% {
+  20% {
     -webkit-transform: rotate(-10deg);
             transform: rotate(-10deg); }
-  85% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg); }
+  60% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg); }
   100% {
     -webkit-transform: rotate(-46deg);
             transform: rotate(-46deg); } }
 
 @keyframes speed-spin {
-  30% {
-    -webkit-transform: rotate(-8deg);
-            transform: rotate(-8deg); }
-  40% {
-    -webkit-transform: rotate(4deg);
-            transform: rotate(4deg); }
-  50% {
-    -webkit-transform: rotate(-7deg);
-            transform: rotate(-7deg); }
-  60% {
-    -webkit-transform: rotate(9deg);
-            transform: rotate(9deg); }
-  70% {
+  20% {
     -webkit-transform: rotate(-10deg);
             transform: rotate(-10deg); }
-  85% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg); }
+  60% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg); }
   100% {
     -webkit-transform: rotate(-46deg);
             transform: rotate(-46deg); } }
