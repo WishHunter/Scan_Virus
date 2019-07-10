@@ -1,0 +1,612 @@
+@import url(bootstrap-reboot.min.css)
+
+.clearfix:after 
+	content: ""
+	display: table
+	clear: both
+html, body 
+	font-family: "Rubik"
+.container
+	max-width: 960px
+	margin: 0 auto
+a:focus, button:focus
+	outline: none
+a 
+	transition: all .2s ease-out
+.btn 
+	display: inline-block
+	padding: 35px 10px
+	text-align: center		
+	background-color: rgb(0, 153, 0)
+	min-width: 320px
+	border-radius: 0 33px 0 33px
+	font-size: 33px
+	line-height: 1
+	color: #fff
+	font-weight: bold
+	text-transform: uppercase
+	box-shadow: 2px 2px 0px 0px #004c00, 6px 6px 0px 0px #004c00, 10px 10px 0px 0px #004c00
+.btn:hover 
+	text-decoration: none
+	box-shadow: 2px 2px 0px 0px rgb(0, 153, 0), 6px 6px 0px 0px rgb(0, 153, 0)
+	background-color: #004c00
+	color: #fff
+.wap
+	display: none
+img 
+	max-width: 100%
+body
+	position: relative
+	min-height: 100vh
+header
+	border-bottom: 1px solid rgb(230, 230, 230)
+	position: relative
+	z-index: 3
+	background-color: #fff
+	.logo
+		padding: 10px 0
+		display: inline-block
+		p 
+			display: inline-block
+			vertical-align: middle
+			font-size: 23px
+			font-family: "Rubik"
+			color: rgb(187, 189, 190)
+			font-weight: bold
+			text-transform: uppercase
+			line-height: 1.2
+			margin-left: 13px
+	ul
+		margin: 0
+		padding: 0
+		list-style-type: none
+		display: inline-block
+		float: right
+		margin-top: 18px
+		li 
+			display: inline-block
+			a
+				font-size: 12px
+				font-family: "Rubik"
+				color: rgb(187, 189, 190)
+				line-height: 1.2
+				display: inline-block
+				padding: 5px 10px
+			a:hover
+				color: rgb(0, 153, 0)
+		li:nth-of-type(2)
+			a 
+				background-color: rgb(0, 153, 0)
+				color: #fff
+				border-radius: 0 8px 0 8px 
+				position: relative
+			a:hover
+				color: #fff
+			a:before 
+				content: 'free'
+				position: absolute
+				left: 0
+				bottom: 100%
+				font-size: 10px
+				font-family: "Rubik"
+				color: rgb(0, 153, 0)
+				font-weight: bold
+				text-transform: uppercase
+main 
+	padding-top: 65px
+	padding-bottom: 65px
+	position: relative
+	z-index: 1
+	.scaner_blocks
+		display: inline-block
+		padding: 0 100px
+		.scaner_block
+			text-align: center
+			width: 175px
+			margin-bottom: 30px
+			.circle_load
+				border-radius: 100%
+				border: 10px solid rgb(229, 229, 229)  
+				position: relative
+				width: 175px
+				height: 175px
+				margin-bottom: 25px
+				.circle_device
+					background-color: #fff
+					width: 155px
+					height: 155px
+					padding: 25px
+					position: relative
+					z-index: 10
+					border-radius: 100%
+					img 
+						position: relative
+						z-index: 11
+				.circle_device:before 
+					content: ''
+					display: block
+					border-radius: 100%
+					position: absolute
+					width: 80%
+					height: 80%
+					left: 10%
+					top: 10%
+					background-color: #e5e5e5
+				.programs
+					text-align: center
+					img 
+						width: 40%
+						margin: 4%
+						border-radius: 100%
+			.circle_loading
+				position: absolute
+				left: -10px
+				top: -10px
+				width: 175px
+				height: 175px
+				clip: rect(0px, 175px, 175px, 87px)
+				.circle
+					position: absolute
+					left: 0
+					top: 0
+					width: 175px
+					height: 175px
+					border-radius: 100%
+					border: 10px solid red
+					clip: rect(0px, 88px, 175px, 0px)
+				.anim_2 
+					transform: rotate(360deg)
+			.small_circle
+				position: absolute
+				left: -10px
+				top: -10px
+				width: 175px
+				height: 175px
+				z-index: 12
+			.small_circle:before
+				content: ''
+				display: block
+				left: 77.5px
+				top: -5px
+				border-radius: 100%
+				background-color: red
+				position: absolute
+				width: 20px
+				height: 20px
+				z-index: 999
+			h5 
+				font-size: 20px
+				color: rgb(30, 40, 50)
+				font-weight: bold
+				margin-bottom: 10px
+			p 
+				font-size: 12px
+				color: rgb(30, 40, 50)
+				span 
+					color: rgb(255, 40, 50)
+					font-weight: bold
+		.scaner_block.wap 
+			display: none
+	.speed_block
+		background-color: rgb(30, 40, 50)
+		max-width: 540px
+		border-radius: 0 50px 0 50px
+		display: inline-block
+		vertical-align: top
+		position: relative
+		text-align: center
+		padding: 80px 60px 130px
+		margin-bottom: 55px
+		border-top: 15px solid red
+		&:before
+			content: ''
+			width: 100%
+			display: none
+			position: absolute
+			height: 15px
+			left: 0
+			top: 0
+			background-color: rgb(255, 0, 0)
+		h5 
+			font-size: 25px
+			color: #fff
+			font-weight: bold
+			margin-bottom: 10px
+		p
+			font-size: 20px
+			color: #fff
+			margin-bottom: 40px
+			span
+				font-size: 25px
+				font-weight: bold
+				color: rgb(255, 0, 0)
+		.speedometer
+			position: relative
+			.speedline
+				position: absolute
+				bottom: -30px
+				left: calc(50% - 40px)
+				transform: rotate(-16deg)
+				transform-origin: center 87%
+			p 
+				position: absolute
+				left: 0
+				bottom: 0
+				width: 100%
+				text-align: center
+				font-size: 25px
+				color: rgb(255, 0, 0)
+				font-weight: bold
+				margin: 0
+				line-height: 1
+				span
+					position: relative
+					z-index: 1
+			p:before
+				content: ''
+				display: block
+				border-radius: 50%
+				background-color: rgb(30, 40, 50)
+				width: 81px
+				height: 81px
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+				z-index: 0
+		.btn 
+			position: absolute
+			left: 50%
+			bottom: 0
+			transform: translate(-50%, 50%)
+footer 
+	background-color: #333333
+	text-align: center
+	padding: 10px
+	position: absolute
+	bottom: 0
+	left: 0
+	width: 100%
+	z-index: 3
+.popup_block
+	position: absolute
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	background-color: #000
+	background-image: url('../img/bg_popup.jpg')
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: top center
+	z-index: 2
+	.popup
+		background-color: #fff
+		width: 480px
+		border-radius: 0 50px 0 50px
+		display: inline-block
+		vertical-align: top
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		text-align: center
+		padding: 65px 40px 35px
+		border-top: 15px solid red
+		.shield
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			transform: translateY(-50%)
+		p 
+			font-size: 24px
+			line-height: 1.5
+			text-align: left
+			margin-bottom: 60px
+			span 
+				color: rgb(255, 0, 0)
+				font-weight: bold
+		.btn
+			width: 100%
+			cursor: pointer
+.bg
+	position: absolute
+	z-index: 0
+	.elem
+		position: fixed
+		display: block
+	.elem1
+		left: 10%
+		top: 20%
+	.elem2
+		left: 9%
+		top: 21%
+		animation: deg360 6s linear infinite
+	.elem3
+		left: 0
+		top: 21%
+	.elem4
+		left: 0
+		top: 52%
+	.elem4_1
+		left: 0
+		top: 54%
+	.elem5
+		left: 0
+		top: 56%
+		animation: elem5 4s linear infinite alternate
+	.elem6
+		left: 1%
+		bottom: 5%
+	.elem7
+		left: 8%
+		bottom: 13%
+	.elem8
+		left: 8%
+		bottom: 15%
+		animation: deg360 6s 1s linear infinite
+	.elem9
+		right: 0
+		top: 8%
+	.elem10
+		right: 12%
+		top: 12%
+		animation: e_opacity 2s linear infinite alternate
+	.elem11
+		right: 12%
+		top: 12%
+	.elem12
+		right: 2%
+		top: 43%
+		animation: elem12 3s linear infinite alternate
+	.elem13
+		right: 2.5%
+		top: 42.5%
+	.elem14
+		right: 5.8%
+		top: 43.8%
+		animation: elem14 4s linear infinite alternate
+	.elem14_1
+		right: 14.5%
+		bottom: 26%
+	.elem15
+		right: 10%
+		bottom: 9%
+	.elem16
+		right: 7%
+		bottom: 10%
+		animation: deg360 8s linear infinite
+
+main.animation
+	.scaner_blocks 
+		.scaner_block 
+			.circle_loading
+				animation: close-wrapper 0.01s linear 2s 1 forwards
+				.circle
+					animation: right-spin 2s linear 1 forwards
+				.anim_2
+					animation: left-spin 4s linear 1 reverse forwards
+			.small_circle
+				animation: loading-spin 4s linear 1 forwards
+	.speed_block 
+		.speedometer 
+			.speedline
+				animation: speed-spin 4s linear 1 reverse
+
+.popup_block 
+	// display: none
+@media screen and (max-width: 991px)
+	.bg
+		display: none
+	.container
+		max-width: 740px
+		padding: 0 10px
+	.wap 
+		display: block
+	header 
+		text-align: center
+		.logo 
+			p
+				color: rgb(0, 153, 0)
+		ul
+			display: none
+		.wap
+			display: inline-block
+			padding-top: 15px
+		.burger
+			float: left 
+		.user_icon
+			float: right
+	main
+		padding-top: 35px 
+		padding-bottom: 85px
+		display: none
+		.scaner_blocks
+			width: 100%
+			padding: 0
+			.scaner_block.web
+				display: none
+			.scaner_block.wap
+				display: inline-block
+			.scaner_block
+				margin: 0 10px 30px
+				width: 30%
+				.circle_load
+					margin: 0 auto 10px
+					.circle_device 
+						padding: 15px
+						img
+							border-radius: 100%
+					.circle_device:before
+						display: none
+				p 
+					font-size: 20px
+		.speed_block
+			display: block
+			margin: 15px auto 15px
+			padding: 50px 40px 45px
+			.btn
+				position: static
+				transform: none
+				width: 100%
+				margin-top: 40px
+@media screen and (max-width: 991px) and (orientation: landscape)
+	.popup_block 
+		.popup
+			width: 300px
+			padding: 50px 20px 20px
+			p 
+				font-size: 15px
+				margin-bottom: 40px
+		.btn
+			font-size: 20px
+			padding: 20px 10px
+			box-shadow: 2px 2px 0px 0px #004c00, 4px 4px 0px 0px #004c00, 6px 6px 0px 0px #004c00
+			border-radius: 0 20px 0 20px
+			min-width: 0
+@media screen and (max-width: 739px)
+	.container
+		max-width: 300px
+		padding: 0 5px
+	.btn
+		font-size: 20px
+		padding: 20px 10px
+		box-shadow: 2px 2px 0px 0px #004c00, 4px 4px 0px 0px #004c00, 6px 6px 0px 0px #004c00
+		border-radius: 0 20px 0 20px
+		min-width: 0
+	header 
+		.logo 
+			img 
+				width: 30px
+			p
+				font-size: 14px
+				margin-left: 10px
+		.wap
+			padding-top: 10px
+	main 
+		padding-bottom: 55px
+		.scaner_blocks 
+			.scaner_block
+				width: 42%
+				margin-bottom: 20px
+				.circle_load
+					width: 100px
+					height: 100px
+					border-width: 5px
+					.circle_device
+						width: 90px
+						height: 90px
+					.circle_loading
+						width: 100px
+						height: 100px
+						left: -5px
+						top: -5px
+						clip: rect(0px, 100px, 100px, 50px)
+						.circle
+							width: 100px
+							height: 100px
+							border-width: 5px
+							clip: rect(0px, 50px, 100px, 0px)
+					.small_circle
+						width: 100px
+						height: 100px
+						left: -5px
+						top: -5px
+					.small_circle:before
+						width: 10px
+						height: 10px
+						left: 45px
+						top: -2.5px
+				h5
+					font-size: 14px
+					margin-bottom: 5px
+				p 
+					font-size: 12px
+		.speed_block
+			padding: 29px 20px 20px
+			border-radius: 0 30px 0 30px
+			h5 
+				font-size: 15px
+			p 
+				font-size: 12px
+				span 
+					font-size: 15px
+			.speedometer 
+				.speedline
+					max-height: 100%
+					bottom: -10px
+					left: calc(50% - 23px)
+			.btn 
+				margin-top: 30px
+	.popup_block 
+		.popup
+			width: 300px
+			padding: 50px 20px 20px
+			p 
+				font-size: 15px
+				margin-bottom: 40px
+@media screen and (max-width: 739px) and (orientation: landscape)
+	footer
+	.popup_block 
+		padding: 40px 0 75px
+		height: auto
+		position: relative
+		.popup
+			position: relative
+			left: 0
+			top: 0
+			transform: none
+@keyframes right-spin 
+	from 
+		transform: rotate(0deg)
+	to 
+		transform: rotate(180deg)
+
+@keyframes left-spin 
+	to 
+		transform: rotate(0deg)
+
+@keyframes close-wrapper 
+	to
+		clip: auto
+
+@keyframes loading-spin 
+	to
+		transform: rotate(360deg)
+
+@keyframes speed-spin
+	30%
+		transform: rotate(-8deg)
+	40%
+		transform: rotate(4deg)
+	50%
+		transform: rotate(-7deg)
+	60%
+		transform: rotate(9deg)
+	70%
+		transform: rotate(-10deg)
+	85%
+		transform: rotate(10deg)
+	100%
+		transform: rotate(-46deg)
+
+@keyframes deg360
+	to
+		transform: rotate(360deg)
+
+@keyframes elem5
+	to
+		transform: translateY(-130%)
+
+@keyframes e_opacity
+	to
+		opacity: 0
+
+@keyframes elem12
+	to
+		transform: translateX(-50%)
+
+@keyframes elem14
+	to
+		transform: translateX(50%)
