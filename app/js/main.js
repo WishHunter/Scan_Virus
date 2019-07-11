@@ -6,6 +6,7 @@ $(document).ready(function() {
 	// run_scan();
 	function run_scan() {
 		var amount_scaner = $('.scaner_block:visible').length;
+		if (amount_scaner == 2) amount_scaner = 4;
 		$('.scaner_block:visible').each(function(indx, elem) {
 			console.log(amount_scaner);
 			$(elem).addClass('virus' + (indx + 1));
@@ -44,12 +45,13 @@ $(document).ready(function() {
 		checked_percent($('.number_percent_random'), randomamount(5, 30, true), speed_total); 
 		
 		setTimeout(function() {
-			$('.scan_test').hide();
-			$('.result_test').fadeIn();
-			$('body,html').animate({scrollTop: $('.speed_block').offset().top}, 500);
+			$('body,html').animate({scrollTop: $('.speed_block').offset().top}, 1000);
 		}, speed_total*1000);
 
-		console.log(speed_total);
+		setTimeout(function() {
+			$('.scan_test').hide();
+			$('.result_test').fadeIn();
+		}, speed_total*1150);
 
 		$('.speedline').css({
 			'transform': 'rotate(' + speed_line(amount_space_total) + 'deg)',
