@@ -33,9 +33,11 @@ a {
   text-transform: uppercase;
   -webkit-box-shadow: 2px 2px 0px 0px #004c00, 6px 6px 0px 0px #004c00, 10px 10px 0px 0px #004c00;
           box-shadow: 2px 2px 0px 0px #004c00, 6px 6px 0px 0px #004c00, 10px 10px 0px 0px #004c00;
-  -webkit-transition: all .2s ease-out;
-  -o-transition: all .2s ease-out;
-  transition: all .2s ease-out;
+  -webkit-transition: -webkit-box-shadow .2s ease-out;
+  transition: -webkit-box-shadow .2s ease-out;
+  -o-transition: box-shadow .2s ease-out;
+  transition: box-shadow .2s ease-out;
+  transition: box-shadow .2s ease-out, -webkit-box-shadow .2s ease-out;
   border: none; }
 
 .btn:hover {
@@ -81,23 +83,26 @@ header {
     margin-top: 18px; }
     header ul li {
       display: inline-block; }
-      header ul li a {
+      header ul li span, header ul li a {
         font-size: 12px;
         font-family: "Rubik";
         color: #bbbdbe;
         line-height: 1.2;
         display: inline-block;
-        padding: 5px 10px; }
-      header ul li a:hover {
+        padding: 5px 10px;
+        cursor: pointer; }
+      header ul li span:hover, header ul li a:hover {
         color: #009900; }
-    header ul li:nth-of-type(2) a {
+      header ul li a {
+        display: none; }
+    header ul li:nth-of-type(2) span, header ul li:nth-of-type(2) a {
       background-color: #009900;
       color: #fff;
       border-radius: 0 8px 0 8px;
       position: relative; }
-    header ul li:nth-of-type(2) a:hover {
+    header ul li:nth-of-type(2) span:hover, header ul li:nth-of-type(2) a:hover {
       color: #fff; }
-    header ul li:nth-of-type(2) a:before {
+    header ul li:nth-of-type(2) span:before, header ul li:nth-of-type(2) a:before {
       content: 'free';
       position: absolute;
       left: 0;
@@ -214,6 +219,7 @@ main {
     position: relative;
     text-align: center;
     padding: 80px 60px 130px;
+    padding: 40px 40px 80px;
     margin-bottom: 55px;
     border-top: 15px solid red; }
     main .speed_block:before {
@@ -226,20 +232,24 @@ main {
       top: 0;
       background-color: red; }
     main .speed_block h5 {
-      font-size: 25px;
-      color: #fff;
-      font-weight: bold;
-      margin-bottom: 10px; }
-    main .speed_block p {
       font-size: 20px;
       color: #fff;
-      margin-bottom: 40px; }
+      font-weight: bold;
+      margin-bottom: 15px; }
+    main .speed_block p {
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 20px; }
       main .speed_block p span {
         font-size: 25px;
         font-weight: bold;
         color: red; }
-    main .speed_block .result_test {
-      display: none; }
+    main .speed_block .bold {
+      font-weight: bold; }
+    main .speed_block .result_test, main .speed_block .result_test_2, main .speed_block .result_test_3 {
+      position: relative; }
+      main .speed_block .result_test p, main .speed_block .result_test_2 p, main .speed_block .result_test_3 p {
+        opacity: 0; }
     main .speed_block .speedometer {
       position: relative; }
       main .speed_block .speedometer .speedline {
@@ -247,12 +257,15 @@ main {
         bottom: -30px;
         left: -webkit-calc(50% - 40px);
         left: calc(50% - 40px);
-        -webkit-transform: rotate(-16deg);
-            -ms-transform: rotate(-16deg);
-                transform: rotate(-16deg);
+        -webkit-transform: rotate(-30deg);
+            -ms-transform: rotate(-30deg);
+                transform: rotate(-30deg);
         -webkit-transform-origin: center 87%;
             -ms-transform-origin: center 87%;
-                transform-origin: center 87%; }
+                transform-origin: center 87%;
+        -webkit-transition: all .5s ease-out;
+        -o-transition: all .5s ease-out;
+        transition: all .5s ease-out; }
       main .speed_block .speedometer p {
         position: absolute;
         left: 0;
@@ -283,6 +296,7 @@ main {
         z-index: 0; }
     main .speed_block .btn {
       position: absolute;
+      display: none;
       left: 50%;
       bottom: 0;
       -webkit-transform: translate(-50%, 50%);
@@ -298,6 +312,9 @@ footer {
   left: 0;
   width: 100%;
   z-index: 3; }
+  footer img {
+    width: 65px;
+    margin: 0 15px; }
 
 .popup_block {
   position: absolute;
@@ -422,20 +439,20 @@ footer {
             animation: deg360 8s linear infinite; }
 
 main.animation .scaner_blocks .scaner_block .circle_loading {
-  -webkit-animation: close-wrapper 0.01s linear 2s 1 forwards;
-          animation: close-wrapper 0.01s linear 2s 1 forwards; }
+  -webkit-animation: close-wrapper 0.01s linear 3.5s 1 forwards;
+          animation: close-wrapper 0.01s linear 3.5s 1 forwards; }
   main.animation .scaner_blocks .scaner_block .circle_loading .circle {
-    -webkit-animation: right-spin 2s linear 1 forwards;
-            animation: right-spin 2s linear 1 forwards; }
+    -webkit-animation: right-spin 3.5s linear 1 forwards;
+            animation: right-spin 3.5s linear 1 forwards; }
   main.animation .scaner_blocks .scaner_block .circle_loading .anim_2 {
-    animation: left-spin 4s linear 1 reverse forwards; }
+    animation: left-spin 7s linear 1 reverse forwards; }
 
 main.animation .scaner_blocks .scaner_block .small_circle {
-  -webkit-animation: loading-spin 4s linear 1 forwards;
-          animation: loading-spin 4s linear 1 forwards; }
+  -webkit-animation: loading-spin 7s linear 1 forwards;
+          animation: loading-spin 7s linear 1 forwards; }
 
 main.animation .speed_block .speedometer .speedline {
-  animation: speed-spin 4s ease 1 reverse; }
+  animation: speed-spin 10s ease 1 reverse; }
 
 @media screen and (max-width: 991px) {
   .bg {
@@ -454,6 +471,9 @@ main.animation .speed_block .speedometer .speedline {
     min-width: 0; }
   header {
     text-align: center; }
+    header .container {
+      max-width: none;
+      padding: 0 15px; }
     header .logo p {
       color: #009900; }
     header ul {
@@ -524,7 +544,10 @@ main.animation .speed_block .speedometer .speedline {
       padding: 29px 20px 20px;
       border-radius: 0 30px 0 30px; }
       main .speed_block .btn {
-        position: static;
+        display: block;
+        position: relative;
+        left: 0;
+        z-index: 1;
         -webkit-transform: none;
             -ms-transform: none;
                 transform: none;
@@ -538,9 +561,7 @@ main.animation .speed_block .speedometer .speedline {
           font-size: 15px; }
       main .speed_block .speedometer .speedline {
         max-height: 100%;
-        bottom: -10px;
-        left: -webkit-calc(50% - 23px);
-        left: calc(50% - 23px); }
+        bottom: -15px; }
   .popup_block .popup {
     width: 380px;
     padding: 65px 20px 35px; }
@@ -622,19 +643,23 @@ main.animation .speed_block .speedometer .speedline {
     main .scaner_blocks .scaner_block:nth-last-of-type(1), main .scaner_blocks .scaner_block:nth-last-of-type(4) {
       display: none; }
     main .speed_block {
-      padding: 29px 20px 20px;
+      padding: 29px 15px 20px;
       border-radius: 0 30px 0 30px; }
       main .speed_block h5 {
-        font-size: 15px; }
+        font-size: 14px; }
       main .speed_block p {
-        font-size: 12px; }
+        font-size: 12px;
+        margin-bottom: 10px; }
         main .speed_block p span {
           font-size: 15px; }
       main .speed_block .speedometer .speedline {
         max-height: 100%;
         bottom: -10px;
         left: -webkit-calc(50% - 23px);
-        left: calc(50% - 23px); }
+        left: calc(50% - 23px);
+        -webkit-transform: rotate(-33deg);
+            -ms-transform: rotate(-33deg);
+                transform: rotate(-33deg); }
       main .speed_block .btn {
         margin-top: 30px; }
   .popup_block .popup {
@@ -703,22 +728,28 @@ main.animation .speed_block .speedometer .speedline {
 
 @-webkit-keyframes speed-spin {
   20% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg); }
+  40% {
     -webkit-transform: rotate(-10deg);
             transform: rotate(-10deg); }
-  60% {
-    -webkit-transform: rotate(20deg);
-            transform: rotate(20deg); }
+  70% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg); }
   100% {
     -webkit-transform: rotate(-46deg);
             transform: rotate(-46deg); } }
 
 @keyframes speed-spin {
   20% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg); }
+  40% {
     -webkit-transform: rotate(-10deg);
             transform: rotate(-10deg); }
-  60% {
-    -webkit-transform: rotate(20deg);
-            transform: rotate(20deg); }
+  70% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg); }
   100% {
     -webkit-transform: rotate(-46deg);
             transform: rotate(-46deg); } }
@@ -770,3 +801,173 @@ main.animation .speed_block .speedometer .speedline {
   to {
     -webkit-transform: translateX(50%);
             transform: translateX(50%); } }
+
+.fountainG_box {
+  position: absolute;
+  width: 234px;
+  height: 28px;
+  margin: auto;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
+.fountainG {
+  position: absolute;
+  top: 0;
+  background-color: #1e2832;
+  width: 18px;
+  height: 18px;
+  -webkit-animation-name: bounce_fountainG;
+          animation-name: bounce_fountainG;
+  -webkit-animation-duration: 1.7s;
+          animation-duration: 1.7s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-transform: scale(0.3);
+      -ms-transform: scale(0.3);
+          transform: scale(0.3);
+  border-radius: 19px; }
+
+.fountainG_1 {
+  left: 0;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s; }
+
+.result_test_2 .fountainG_1 {
+  left: 0;
+  -webkit-animation-delay: 1.1s;
+          animation-delay: 1.1s; }
+
+.result_test_3 .fountainG_1 {
+  left: 0;
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s; }
+
+.fountainG_2 {
+  left: 29px;
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s; }
+
+.result_test_2 .fountainG_2 {
+  left: 29px;
+  -webkit-animation-delay: 1.25s;
+          animation-delay: 1.25s; }
+
+.result_test_3 .fountainG_2 {
+  left: 29px;
+  -webkit-animation-delay: 1.75s;
+          animation-delay: 1.75s; }
+
+.fountainG_3 {
+  left: 58px;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s; }
+
+.result_test_2 .fountainG_3 {
+  left: 58px;
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s; }
+
+.result_test_3 .fountainG_3 {
+  left: 58px;
+  -webkit-animation-delay: 1.9s;
+          animation-delay: 1.9s; }
+
+.fountainG_4 {
+  left: 88px;
+  -webkit-animation-delay: 1.05s;
+          animation-delay: 1.05s; }
+
+.result_test_2 .fountainG_4 {
+  left: 88px;
+  -webkit-animation-delay: 1.55s;
+          animation-delay: 1.55s; }
+
+.result_test_3 .fountainG_4 {
+  left: 88px;
+  -webkit-animation-delay: 2.05s;
+          animation-delay: 2.05s; }
+
+.fountainG_5 {
+  left: 117px;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s; }
+
+.result_test_2 .fountainG_5 {
+  left: 117px;
+  -webkit-animation-delay: 1.7s;
+          animation-delay: 1.7s; }
+
+.result_test_3 .fountainG_5 {
+  left: 117px;
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s; }
+
+.fountainG_6 {
+  left: 146px;
+  -webkit-animation-delay: 1.35s;
+          animation-delay: 1.35s; }
+
+.result_test_2 .fountainG_6 {
+  left: 146px;
+  -webkit-animation-delay: 1.85s;
+          animation-delay: 1.85s; }
+
+.result_test_3 .fountainG_6 {
+  left: 146px;
+  -webkit-animation-delay: 2.35s;
+          animation-delay: 2.35s; }
+
+.fountainG_7 {
+  left: 175px;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s; }
+
+.result_test_2 .fountainG_7 {
+  left: 175px;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s; }
+
+.result_test_3 .fountainG_7 {
+  left: 175px;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s; }
+
+.fountainG_8 {
+  left: 205px;
+  -webkit-animation-delay: 1.64s;
+          animation-delay: 1.64s; }
+
+.result_test_2 .fountainG_8 {
+  left: 205px;
+  -webkit-animation-delay: 2.14s;
+          animation-delay: 2.14s; }
+
+.result_test_3 .fountainG_8 {
+  left: 205px;
+  -webkit-animation-delay: 2.64s;
+          animation-delay: 2.64s; }
+
+@-webkit-keyframes bounce_fountainG {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: white; }
+  100% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    background-color: #1e2832; } }
+
+@keyframes bounce_fountainG {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: white; }
+  100% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    background-color: #1e2832; } }

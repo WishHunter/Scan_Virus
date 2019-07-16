@@ -50,7 +50,7 @@ gulp.task('clean', function() {
 gulp.task('img', function() {
 	return gulp.src('app/img/**/*') // Берем все изображения из app
 	.pipe(cache(imagemin([  // Сжимаем их с наилучшими настройками с учетом кеширования
-		imagemin.optipng({optimizationLevel: 5}),
+		imagemin.optipng({optimizationLevel: 7}),
 		imagemin.gifsicle({interlaced: true}),
 		imagemin.jpegtran({progressive: true}),
 		imagemin.svgo({ plugins: [{removeViewBox: true},{cleanupIDs: false}]}),
